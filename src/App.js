@@ -386,16 +386,19 @@ export default function PhotographyPortfolio() {
         </div>
         <div style={styles.aboutText} className="reveal">
           <p style={styles.eyebrow}>— ABOUT ME —</p>
-          <h2 style={styles.sectionTitle}>The Eye Behind the Lens</h2>
+          <h2 style={styles.sectionTitle}>Hi, I'm Riya Varma</h2>
           <div style={styles.titleUnderline} />
           <p style={styles.aboutCopy}>
-            I'm a visual storyteller based in the heart of the city, specializing in weddings, portraits, and aerial cinematography. With 8 years behind the lens and hundreds of sessions across four continents, I believe every frame should feel inevitable — like it couldn't have been taken any other way.
+            My love for photography began in 7th grade — long before I had the right gear or the right words for it. I just knew that every time I held a camera, something clicked. Not just the shutter, but something within me.
           </p>
           <p style={styles.aboutCopy}>
-            My drone certification and film-school background give me a rare dual perspective: intimate ground-level storytelling and cinematic aerial sweeps in the same session.
+            Today, I pour that same passion into every session — whether it's the quiet magic of a newborn's first expressions, the grandeur of a wedding, the warmth of an Indian traditional ceremony, or the cinematic sweep of a drone over a golden-hour landscape. I specialize in storytelling that feels real, intimate, and timeless.
+          </p>
+          <p style={styles.aboutCopy}>
+            From maternity shoots and house warmings to couple portraits, product photography, birthdays, and corporate events — I show up fully, every time. I'm also open to creative collaborations with brands, artists, and fellow creators.
           </p>
           <div style={styles.aboutBadges}>
-            {["FAA Drone Certified", "Adobe Certified", "Canon Explorer"].map(b => (
+            {["Newborn Photography", "Drone Videography", "Indian Traditional Events", "Cinematic Portraits", "Open to Collaborations"].map(b => (
               <span key={b} style={styles.badge}>{b}</span>
             ))}
           </div>
