@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 const OPT = "w_800,q_auto,f_auto";
 const cl = (path) => `https://res.cloudinary.com/dh6xo1aun/image/upload/${OPT}/${path}`;
@@ -140,7 +140,14 @@ export default function PhotographyPortfolio() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const filtered = activeFilter === "all" ? PHOTOS : PHOTOS.filter(p => p.category === activeFilter);
+  const filtered = useMemo(() => {
+    const list = activeFilter === "all" ? [...PHOTOS] : PHOTOS.filter(p => p.category === activeFilter);
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+  }, [activeFilter]);
 
   const handleBook = async (e) => {
     e.preventDefault();
@@ -320,7 +327,7 @@ export default function PhotographyPortfolio() {
             <div style={styles.titleUnderline} />
           </div>
           <p style={styles.videoCopy} className="reveal">
-            From sweeping coastlines to intimate rooftop ceremonies — my drone captures the story from a perspective no one else can offer. Every flight is planned, permitted, and breathtaking.
+            Some stories are too big to tell from the ground. I take my drone up so you can see your moment the way it was always meant to be seen — vast, cinematic, and breathtaking. Whether it's a wedding, a landscape, or a celebration, the sky adds a dimension no lens on the ground ever could.
           </p>
           <div style={styles.videoGrid}>
             {[
