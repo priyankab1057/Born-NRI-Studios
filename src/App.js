@@ -15,22 +15,22 @@ const PHOTOS = [
 const PACKAGES = [
   {
     name: "Essential",
-    price: "$450",
+    price: "$300",
     hours: "2 Hours",
-    highlights: ["150+ edited photos", "1 location", "Online gallery", "Print release"],
+    highlights: ["100+ edited photos", "1 location", "Print release"],
   },
   {
     name: "Signature",
-    price: "$950",
+    price: "$500",
     hours: "4 Hours",
-    highlights: ["400+ edited photos", "2 locations", "Drone footage included", "Rush delivery", "Canvas print"],
+    highlights: ["200+ edited photos", "2 locations", "Drone footage included", "Rush delivery"],
     featured: true,
   },
   {
     name: "Elite",
-    price: "$1,800",
+    price: "$1,000",
     hours: "Full Day",
-    highlights: ["Unlimited photos", "Multiple locations", "4K drone video", "Same-week delivery", "10 prints + album"],
+    highlights: ["Unlimited photos", "Multiple locations", "4K drone video", "Same-week delivery"],
   },
 ];
 
@@ -213,7 +213,7 @@ export default function PhotographyPortfolio() {
           </h1>
           <div style={styles.heroDividerBottom} />
           <p style={styles.heroSub}>
-            NewBorn · Portraits · Events · Graduation · PreWedding · House Warming · Product · Drone
+            New Born &nbsp;·&nbsp; Portraits &nbsp;·&nbsp; Maternity &nbsp;·&nbsp; Pre-Wedding &nbsp;·&nbsp; House Warming &nbsp;·&nbsp; Birthdays &nbsp;·&nbsp; Graduation &nbsp;·&nbsp; Product Photography
           </p>
           <div style={styles.heroBtns}>
             <button style={styles.btnGold} className="btn-gold" onClick={() => scrollTo("work")}>VIEW MY WORK</button>
@@ -226,15 +226,6 @@ export default function PhotographyPortfolio() {
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <div style={styles.statsBar}>
-        {[["500+", "Sessions Shot"], ["8", "Years Experience"], ["4.9★", "Average Rating"], ["12", "Awards Won"]].map(([num, label], i) => (
-          <div key={label} style={{ ...styles.stat, ...(i < 3 ? styles.statBorder : {}) }}>
-            <span style={styles.statNum}>{num}</span>
-            <span style={styles.statLabel}>{label}</span>
-          </div>
-        ))}
-      </div>
 
       {/* GALLERY */}
       <section id="work" style={styles.section}>
@@ -326,6 +317,7 @@ export default function PhotographyPortfolio() {
           <h2 style={styles.sectionTitle}>Session Packages</h2>
           <div style={styles.titleUnderline} />
         </div>
+        <p style={styles.priceNote}>✦ &nbsp;Prices are flexible — let's talk and find a package that works for you.</p>
         <div style={styles.packagesGrid}>
           {PACKAGES.map((pkg, i) => (
             <div
@@ -355,28 +347,6 @@ export default function PhotographyPortfolio() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section style={styles.testimonialsSection}>
-        <div style={styles.sectionHead} className="reveal">
-          <p style={styles.eyebrowLight}>— KIND WORDS —</p>
-          <h2 style={{ ...styles.sectionTitle, color: "#f0ebe2" }}>What Clients Say</h2>
-          <div style={styles.titleUnderline} />
-        </div>
-        <div style={styles.testimonialsGrid}>
-          {TESTIMONIALS.map(t => (
-            <div key={t.name} style={styles.testimonialCard} className="testimonial-card reveal">
-              <div style={styles.quoteIcon}>"</div>
-              <div style={styles.starsRow}>{"★".repeat(t.stars)}</div>
-              <p style={styles.testimonialText}>{t.text}</p>
-              <div style={styles.testimonialDivider} />
-              <div style={styles.testimonialAuthor}>
-                <strong style={styles.testimonialName}>{t.name}</strong>
-                <span style={styles.testimonialEvent}>{t.event}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ABOUT */}
       <section id="about" style={styles.aboutSection}>
@@ -398,7 +368,7 @@ export default function PhotographyPortfolio() {
             From maternity shoots and house warmings to couple portraits, product photography, birthdays, and corporate events — I show up fully, every time. I'm also open to creative collaborations with brands, artists, and fellow creators.
           </p>
           <div style={styles.aboutBadges}>
-            {["Newborn Photography", "Drone Videography", "Indian Traditional Events", "Cinematic Portraits", "Open to Collaborations"].map(b => (
+            {["Newborn Photography", "Maternity", "Couple Portraits", "Pre-Wedding", "Weddings", "House Warming", "Birthdays & Parties", "Graduation", "Product Photography", "Corporate & Headshots", "Drone Videography", "Golden Hour Portraits", "Indian Traditional Events", "Collaborations Welcome"].map(b => (
               <span key={b} style={styles.badge}>{b}</span>
             ))}
           </div>
@@ -411,7 +381,7 @@ export default function PhotographyPortfolio() {
           <p style={styles.eyebrow}>— LET'S CREATE —</p>
           <h2 style={styles.sectionTitle}>Book Your Session</h2>
           <div style={styles.titleUnderline} />
-          <p style={styles.formSubtitle}>Fill out the form below and I'll get back to you within 24 hours.</p>
+          <p style={styles.formSubtitle}>Fill out the form below and I'll get back to you within 48 hours.</p>
         </div>
 
         {submitted ? (
@@ -476,8 +446,13 @@ export default function PhotographyPortfolio() {
         </div>
         <p style={styles.footerTagline}>Capturing Global Moments · EST. 2025</p>
         <div style={styles.footerLinks}>
-          {["Instagram", "Facebook", "YouTube"].map(s => (
-            <a key={s} href="#" style={styles.footerLink} className="footer-link">{s}</a>
+          {[
+            { label: "Instagram", href: "https://www.instagram.com/bornnristudios/" },
+            { label: "Facebook", href: "#" },
+            { label: "YouTube", href: "https://www.youtube.com/@BornNRIStudios" },
+            { label: "X / Twitter", href: "https://x.com/BornNRIStudios" },
+          ].map(s => (
+            <a key={s.label} href={s.href} target={s.href !== "#" ? "_blank" : undefined} rel="noopener noreferrer" style={styles.footerLink} className="footer-link">{s.label}</a>
           ))}
         </div>
         <p style={styles.footerCopy}>© 2025 Born NRI Photography. All rights reserved.</p>
@@ -568,6 +543,7 @@ const styles = {
   playIcon: { color: "#c8a96e", fontSize: "1.1rem", marginLeft: "3px" },
   videoLabel: { position: "absolute", bottom: "1.2rem", left: "1.2rem", right: "1.2rem", color: "#f0ebe2", fontSize: "0.88rem", letterSpacing: "0.08em", fontWeight: 300 },
 
+  priceNote: { textAlign: "center", fontSize: "0.85rem", color: "#c8a96e", opacity: 0.75, marginBottom: "2.5rem", fontStyle: "italic", letterSpacing: "0.05em" },
   packagesGrid: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" },
   packageCard: { border: "1px solid rgba(200,169,110,0.18)", padding: "3rem 2rem 2.5rem", position: "relative", textAlign: "center", transition: "all 0.35s", background: "rgba(255,255,255,0.01)" },
   packageFeatured: { border: "1px solid rgba(200,169,110,0.6)", background: "rgba(200,169,110,0.04)", transform: "translateY(-8px)" },
