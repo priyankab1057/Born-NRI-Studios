@@ -1,15 +1,46 @@
 import { useState, useEffect, useRef } from "react";
 
+const OPT = "w_800,q_auto,f_auto";
+const cl = (path) => `https://res.cloudinary.com/dh6xo1aun/image/upload/${OPT}/${path}`;
+
 const PHOTOS = [
-  { id: 1, category: "portrait", src: "https://res-console.cloudinary.com/dh6xo1aun/thumbnails/v1/image/upload/v1777962658/RFNDMDYxMTlfbjh3Z3lu/drilldown", title: "Gender Reveal Portrait" },
-  { id: 2, category: "wedding", src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80", title: "Wedding Bloom" },
-  { id: 3, category: "aerial", src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", title: "Mountain Aerial" },
-  { id: 4, category: "portrait", src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80", title: "Studio Gaze" },
-  { id: 5, category: "wedding", src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80", title: "First Dance" },
-  { id: 6, category: "aerial", src: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80", title: "Coast From Above" },
-  { id: 7, category: "portrait", src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80", title: "Natural Light" },
-  { id: 8, category: "wedding", src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80", title: "Candid Joy" },
-  { id: 9, category: "aerial", src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80", title: "City Grid" },
+  { id: 1,  category: "nature",    src: cl("v1781602635/DSC01526_acjca0.jpg"),  title: "Nature" },
+  { id: 2,  category: "nature",    src: cl("v1781602634/DSC01523_y4dfbg.jpg"),  title: "Nature" },
+  { id: 3,  category: "nature",    src: cl("v1781602634/DSC01486_agxsc3.jpg"),  title: "Nature" },
+  { id: 4,  category: "newborn",   src: cl("v1781602633/DSC01546_sgs0gi.jpg"),  title: "New Born" },
+  { id: 5,  category: "portrait",  src: cl("v1781602632/DSC09992_ryqere.jpg"),  title: "Portrait" },
+  { id: 6,  category: "product",   src: cl("v1781602631/DSC00842_mhjup0.jpg"),  title: "Product Photography" },
+  { id: 7,  category: "travel",    src: cl("v1781601814/IMG_7874_usmrco.jpg"),  title: "Travel" },
+  { id: 8,  category: "travel",    src: cl("v1781601814/DSC07214_hlqvpl.jpg"),  title: "Travel" },
+  { id: 9,  category: "travel",    src: cl("v1781601813/IMG_0933_sqrx6g.jpg"),  title: "Travel" },
+  { id: 10, category: "travel",    src: cl("v1781601812/DSC07222_odfica.jpg"),  title: "Travel" },
+  { id: 11, category: "travel",    src: cl("v1781601812/IMG_0465_p0004v.jpg"),  title: "Travel" },
+  { id: 12, category: "travel",    src: cl("v1781601812/IMG_0969_u4fzso.jpg"),  title: "Travel" },
+  { id: 13, category: "travel",    src: cl("v1781601811/IMG_0526_qz9tlg.jpg"),  title: "Travel" },
+  { id: 14, category: "travel",    src: cl("v1781601809/IMG_0533_jlq9xz.jpg"),  title: "Travel" },
+  { id: 15, category: "travel",    src: cl("v1781601808/IMG_3230_idezad.jpg"),  title: "Travel" },
+  { id: 16, category: "travel",    src: cl("v1781601807/5CFD3689-BCE7-4E22-85B7-5386D9830983_tvkecd.jpg"), title: "Travel" },
+  { id: 17, category: "travel",    src: cl("v1781601807/IMG_0682_eybso1.jpg"),  title: "Travel" },
+  { id: 18, category: "aerial",    src: cl("v1781601807/DJI_0167_hdxygr.jpg"),  title: "Aerial Shot" },
+  { id: 19, category: "aerial",    src: cl("v1781601805/DJI_0147_dszuu9.jpg"),  title: "Aerial Shot" },
+  { id: 20, category: "travel",    src: cl("v1781601804/DFD4B4E7-45E0-4960-B639-BB1AE462E3A6_b0jtsh.jpg"), title: "Travel" },
+  { id: 21, category: "travel",    src: cl("v1781601804/73384E62-243D-45A3-89AD-3BDA0A594BFF_g7g2ch.jpg"), title: "Travel" },
+  { id: 22, category: "travel",    src: cl("v1781601804/IMG_0961_gu8es3.jpg"),  title: "Travel" },
+  { id: 23, category: "travel",    src: cl("v1781601803/faed917d-2e2a-425b-81fc-2fbd0bf812d4_pdpccv.jpg"), title: "Travel" },
+  { id: 24, category: "travel",    src: cl("v1781601802/971572c1-f731-4c10-b3af-40bbb8875d17_tccfhy.jpg"), title: "Travel" },
+  { id: 25, category: "travel",    src: cl("v1781601802/6aa04b43-315f-4c66-9c97-bfe151d3b2de_ppqhu6.jpg"), title: "Travel" },
+  { id: 26, category: "travel",    src: cl("v1781601802/5cfd6e63-8004-43cc-95e1-d121af5afee3_qyuqxw.jpg"), title: "Travel" },
+  { id: 27, category: "travel",    src: cl("v1781601749/IMG_0099_u1daq3.jpg"),  title: "Travel" },
+  { id: 28, category: "newborn",   src: cl("v1777962657/DSC05962_ampui7.jpg"),  title: "New Born" },
+  { id: 29, category: "newborn",   src: cl("v1777962658/DSC06119_n8wgyn.jpg"),  title: "New Born" },
+  { id: 30, category: "travel",    src: cl("v1781601803/IMG_1311_vk7vlm.jpg"),  title: "Travel" },
+  { id: 31, category: "events",    src: cl("v1781601803/IMG_1207_u4depr.jpg"),  title: "Birthday" },
+  { id: 32, category: "newborn",   src: cl("v1781601803/DAAD6D80-1743-4C7B-9E52-40AD808F32D3_kg4dot.jpg"), title: "New Born" },
+  { id: 33, category: "maternity", src: cl("v1781601803/90986C63-6EEB-4586-83CE-7C8FE860D7AB_t4iu5c.jpg"), title: "Maternity" },
+  { id: 34, category: "family",    src: cl("v1781601804/IMG_1321_cclujb.jpg"),  title: "Family" },
+  { id: 35, category: "family",    src: cl("v1781601806/DSC06652_rg6voa.jpg"),  title: "Family" },
+  { id: 36, category: "family",    src: cl("v1781601808/DSC06663_feccjh.jpg"),  title: "Family" },
+  { id: 37, category: "events",    src: cl("v1781601811/DSC06719_kvvrxt.jpg"),  title: "House Warming" },
 ];
 
 const PACKAGES = [
@@ -235,7 +266,7 @@ export default function PhotographyPortfolio() {
           <div style={styles.titleUnderline} />
         </div>
         <div style={styles.filters} className="reveal">
-          {["all", "portrait", "wedding", "aerial"].map(f => (
+          {["all", "portrait", "newborn", "maternity", "family", "events", "nature", "travel", "aerial", "product"].map(f => (
             <button
               key={f}
               style={{ ...styles.filterBtn, ...(activeFilter === f ? styles.filterActive : {}) }}
@@ -249,9 +280,9 @@ export default function PhotographyPortfolio() {
         <div style={styles.gallery} className="gallery-grid">
           {filtered.map((photo, i) => (
             <div
-              key={photo.id}
-              style={{ ...styles.galleryItem, animationDelay: `${i * 0.07}s` }}
-              className="gallery-item reveal"
+              key={`${activeFilter}-${photo.id}`}
+              style={{ ...styles.galleryItem, animationDelay: `${i * 0.05}s` }}
+              className="gallery-item gallery-item-appear"
               onClick={() => setLightbox(photo)}
             >
               <img src={photo.src} alt={photo.title} style={styles.galleryImg} loading="lazy" />
@@ -271,7 +302,7 @@ export default function PhotographyPortfolio() {
         <div style={styles.lightboxBg} onClick={() => setLightbox(null)}>
           <button style={styles.lightboxClose} onClick={() => setLightbox(null)}>✕</button>
           <img
-            src={lightbox.src.replace("w=800", "w=1400")}
+            src={lightbox.src.replace("w_800,q_auto,f_auto", "w_1400,q_auto,f_auto")}
             alt={lightbox.title}
             style={styles.lightboxImg}
             onClick={e => e.stopPropagation()}
@@ -611,6 +642,12 @@ const css = `
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(36px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  .gallery-item-appear { animation: galleryFadeIn 0.45s cubic-bezier(0.22,1,0.36,1) both; }
+  @keyframes galleryFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
   }
   @keyframes scrollPulse {
     0%, 100% { opacity: 0.4; transform: scaleY(1); }
