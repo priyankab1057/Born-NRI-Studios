@@ -425,8 +425,23 @@ export default function PhotographyPortfolio() {
         {submitted ? (
           <div style={styles.successBox} className="reveal">
             <div style={styles.successIcon}>✦</div>
-            <h3 style={{ color: "#c8a96e", marginBottom: "0.5rem", fontSize: "1.5rem", fontWeight: 300, letterSpacing: "0.05em" }}>You're on my radar!</h3>
-            <p style={{ opacity: 0.75, lineHeight: 1.8 }}>Thanks {formData.name}! I'll be in touch within 24 hours to confirm your session.</p>
+            <h3 style={{ color: "#c8a96e", marginBottom: "1rem", fontSize: "2rem", fontWeight: 300, letterSpacing: "0.05em" }}>Thank you, {formData.name}!</h3>
+            <p style={{ opacity: 0.8, lineHeight: 2, fontSize: "1.05rem", marginBottom: "1rem" }}>
+              Your booking request has been received. I'm so excited to hear about your vision!
+            </p>
+            <p style={{ opacity: 0.6, lineHeight: 1.9, fontSize: "0.95rem", marginBottom: "1.5rem" }}>
+              I'll personally review your details and get back to you within <strong style={{ color: "#c8a96e" }}>48 hours</strong> to discuss your session and next steps.
+            </p>
+            <div style={{ width: "40px", height: "1px", background: "rgba(200,169,110,0.4)", margin: "0 auto 1.5rem" }} />
+            <p style={{ opacity: 0.5, fontSize: "0.75rem", letterSpacing: "0.15em", fontFamily: "'Raleway', sans-serif", marginBottom: "2rem" }}>
+              CAN'T WAIT TO CREATE SOMETHING BEAUTIFUL WITH YOU ✦
+            </p>
+            <button
+              style={styles.submitBtn}
+              onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", event: "", date: "", message: "" }); }}
+            >
+              SUBMIT ANOTHER REQUEST
+            </button>
           </div>
         ) : (
           <form style={styles.form} onSubmit={handleBook} className="reveal">
