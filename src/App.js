@@ -783,7 +783,14 @@ const css = `
     background: rgba(200,169,110,0.03) !important;
   }
   input[type="date"] { color-scheme: dark; }
-  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.7; cursor: pointer; }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(2);
+    opacity: 1;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+  }
   select option { background: #0c0a07; }
 
   /* Desktop only */
