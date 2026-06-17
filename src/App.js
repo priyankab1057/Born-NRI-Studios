@@ -118,6 +118,7 @@ function useScrollProgress() {
 export default function PhotographyPortfolio() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [lightbox, setLightbox] = useState(null);
+  const [videoOpen, setVideoOpen] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", event: "", date: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -327,6 +328,20 @@ export default function PhotographyPortfolio() {
         </div>
       )}
 
+      {/* VIDEO LIGHTBOX */}
+      {videoOpen && (
+        <div style={styles.lightboxBg} onClick={() => setVideoOpen(null)}>
+          <button style={styles.lightboxClose} onClick={() => setVideoOpen(null)}>✕</button>
+          <video
+            src={videoOpen}
+            controls
+            autoPlay
+            style={{ maxWidth: "90vw", maxHeight: "80vh", outline: "none" }}
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       {/* DRONE VIDEO */}
       <section id="video" style={styles.videoSection}>
         <div style={styles.videoInner}>
@@ -340,11 +355,11 @@ export default function PhotographyPortfolio() {
           </p>
           <div style={styles.videoGrid}>
             {[
-              { label: "Wedding Aerial Reel", thumb: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" },
-              { label: "Nature & Landscape", thumb: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" },
-              { label: "Corporate Events", thumb: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80" },
+              { label: "House Warming Aerial Reel", thumb: "https://res.cloudinary.com/dh6xo1aun/video/upload/w_600,q_auto,so_2/v1781601818/dji_export_20230326_225505_1679885705036_mastershots_cache_xvnbrw.jpg", video: "https://res.cloudinary.com/dh6xo1aun/video/upload/v1781601818/dji_export_20230326_225505_1679885705036_mastershots_cache_xvnbrw.mov" },
+              { label: "Nature & Landscape", thumb: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80", video: null },
+              { label: "Corporate Events", thumb: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80", video: null },
             ].map(v => (
-              <div key={v.label} style={styles.videoCard} className="video-card reveal">
+              <div key={v.label} style={styles.videoCard} className="video-card reveal" onClick={() => v.video && setVideoOpen(v.video)}>
                 <img src={v.thumb} alt={v.label} style={styles.videoThumb} />
                 <div style={styles.videoCardOverlay} />
                 <div style={styles.playCircle}>
