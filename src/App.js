@@ -459,6 +459,13 @@ export default function PhotographyPortfolio() {
           <h2 style={styles.sectionTitle}>Book Your Session</h2>
           <div style={styles.titleUnderline} />
           <p style={styles.formSubtitle}>Fill out the form below and I'll get back to you within 48 hours.</p>
+          <div style={styles.locationBadge}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8a96e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0}}>
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <span style={styles.locationText}>Based in <strong style={{color:"#f0ebe2"}}>St. Louis, MO</strong> &nbsp;·&nbsp; Available across the <strong style={{color:"#f0ebe2"}}>entire USA</strong></span>
+          </div>
         </div>
 
         {submitted ? (
@@ -703,6 +710,8 @@ const styles = {
   input: { background: "rgba(240,235,226,0.05)", border: "1px solid rgba(240,235,226,0.12)", borderBottom: "1px solid rgba(200,169,110,0.3)", color: "#f0ebe2", padding: "0.9rem 1rem", fontSize: "1rem", fontFamily: "'Cormorant Garamond', serif", outline: "none", width: "100%", boxSizing: "border-box", transition: "border-color 0.3s", colorScheme: "dark" },
   submitBtn: { background: "#c8a96e", border: "1px solid #c8a96e", color: "#060402", padding: "1.15rem 2.5rem", fontSize: "0.62rem", letterSpacing: "0.25em", cursor: "pointer", fontWeight: 700, fontFamily: "'Raleway', sans-serif", width: "100%", marginTop: "0.5rem", transition: "all 0.3s" },
   formSubtitle: { opacity: 0.5, fontSize: "0.95rem", marginTop: "0.75rem", fontFamily: "'Raleway', sans-serif" },
+  locationBadge: { display: "inline-flex", alignItems: "center", gap: "0.5rem", marginTop: "1.5rem", border: "1px solid rgba(200,169,110,0.25)", padding: "0.6rem 1.4rem", background: "rgba(200,169,110,0.05)" },
+  locationText: { fontSize: "0.75rem", letterSpacing: "0.1em", color: "rgba(240,235,226,0.5)", fontFamily: "'Raleway', sans-serif" },
   successBox: { maxWidth: "480px", margin: "0 auto", textAlign: "center", border: "1px solid rgba(200,169,110,0.3)", padding: "3.5rem" },
   successIcon: { fontSize: "2rem", color: "#c8a96e", marginBottom: "1.2rem" },
 
