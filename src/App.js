@@ -432,7 +432,7 @@ export default function PhotographyPortfolio() {
         </div>
 
         {submitted ? (
-          <div style={styles.successBox} className="reveal">
+          <div style={styles.successBox}>
             <div style={styles.successIcon}>✦</div>
             <h3 style={{ color: "#c8a96e", marginBottom: "1rem", fontSize: "2rem", fontWeight: 300, letterSpacing: "0.05em" }}>Thank you, {formData.name}!</h3>
             <p style={{ opacity: 0.8, lineHeight: 2, fontSize: "1.05rem", marginBottom: "1rem" }}>
@@ -470,7 +470,7 @@ export default function PhotographyPortfolio() {
             </div>
           </div>
         ) : (
-          <form style={styles.form} onSubmit={handleBook} className="reveal">
+          <form style={styles.form} onSubmit={handleBook}>
             <div style={styles.formRow}>
               <div style={styles.formGroup}>
                 <label style={styles.label}>YOUR NAME</label>
