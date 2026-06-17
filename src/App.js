@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 
-const OPT = "w_800,q_auto,f_auto";
+const OPT = "w_800,q_auto,f_auto,l_text:Arial_16_bold:%C2%A9%20Born%20NRI%20Studios,co_white,o_45,g_south_east,x_12,y_12";
 const cl = (path) => `https://res.cloudinary.com/dh6xo1aun/image/upload/${OPT}/${path}`;
 
 const PHOTOS = [
@@ -132,6 +132,16 @@ export default function PhotographyPortfolio() {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const prevent = (e) => e.preventDefault();
+    document.addEventListener("contextmenu", prevent);
+    document.addEventListener("dragstart", prevent);
+    return () => {
+      document.removeEventListener("contextmenu", prevent);
+      document.removeEventListener("dragstart", prevent);
+    };
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -654,6 +664,19 @@ const styles = {
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    pointer-events: none;
+  }
+  .gallery-item, .video-card, .lightbox-img-wrap {
+    pointer-events: all;
+  }
+  .gallery-item img, .video-card img {
+    pointer-events: none;
+  }
   html { scroll-behavior: smooth; }
 
   /* Scroll reveal */
