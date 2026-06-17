@@ -413,8 +413,21 @@ export default function PhotographyPortfolio() {
       {/* ABOUT */}
       <section id="about" style={styles.aboutSection}>
         <div style={styles.aboutImgWrap} className="reveal">
-          <div style={styles.aboutImgAccent} />
-          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80" alt="Photographer" style={styles.aboutImg} />
+          <div style={styles.quoteCard}>
+            <div style={{...styles.quoteCorner, top: 6, left: 6, borderTop: "1.5px solid #c8a96e", borderLeft: "1.5px solid #c8a96e"}} />
+            <div style={{...styles.quoteCorner, top: 6, right: 6, borderTop: "1.5px solid #c8a96e", borderRight: "1.5px solid #c8a96e"}} />
+            <div style={{...styles.quoteCorner, bottom: 6, left: 6, borderBottom: "1.5px solid #c8a96e", borderLeft: "1.5px solid #c8a96e"}} />
+            <div style={{...styles.quoteCorner, bottom: 6, right: 6, borderBottom: "1.5px solid #c8a96e", borderRight: "1.5px solid #c8a96e"}} />
+            <div style={styles.quoteMark}>"</div>
+            <p style={styles.quoteText}>Every frame tells a story</p>
+            <div style={styles.quoteDivider} />
+            <span style={styles.quoteStarIcon}>✦</span>
+            <p style={styles.quoteName}>RIYA VARMA</p>
+            <p style={styles.quoteStudio}>BORN NRI STUDIOS</p>
+            <div style={styles.quoteDivider} />
+            <p style={styles.quoteSpecialties}>Portraits · Newborn · Events</p>
+            <p style={styles.quoteSpecialties}>Weddings · Drone · Maternity</p>
+          </div>
         </div>
         <div style={styles.aboutText} className="reveal">
           <p style={styles.eyebrow}>— ABOUT ME —</p>
@@ -666,9 +679,16 @@ const styles = {
   testimonialEvent: { opacity: 0.5, fontSize: "0.65rem", letterSpacing: "0.18em", fontFamily: "'Raleway', sans-serif" },
 
   aboutSection: { display: "grid", gridTemplateColumns: "1fr 1fr", maxWidth: "1200px", margin: "0 auto", padding: "7rem 2rem", gap: "6rem", alignItems: "center" },
-  aboutImgWrap: { position: "relative" },
-  aboutImgAccent: { position: "absolute", top: "1.5rem", left: "1.5rem", right: "-1.5rem", bottom: "-1.5rem", border: "1px solid rgba(200,169,110,0.25)", zIndex: 0 },
-  aboutImg: { width: "100%", height: "550px", objectFit: "cover", position: "relative", zIndex: 1, display: "block" },
+  aboutImgWrap: { position: "relative", display: "flex", alignItems: "center", justifyContent: "center" },
+  quoteCard: { position: "relative", background: "#0c0a07", border: "1px solid rgba(200,169,110,0.25)", width: "100%", maxWidth: "420px", minHeight: "440px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem 2.5rem", textAlign: "center", gap: 0 },
+  quoteCorner: { position: "absolute", width: "18px", height: "18px" },
+  quoteMark: { fontSize: "5.5rem", color: "#c8a96e", opacity: 0.15, lineHeight: 0.7, fontFamily: "Georgia, serif", marginBottom: "1.2rem" },
+  quoteText: { fontSize: "1.6rem", fontWeight: 300, color: "#f0ebe2", fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", lineHeight: 1.5, marginBottom: "1.4rem", margin: "0 0 1.4rem" },
+  quoteDivider: { width: "36px", height: "1px", background: "rgba(200,169,110,0.45)", margin: "1rem auto" },
+  quoteStarIcon: { color: "#c8a96e", fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" },
+  quoteName: { fontSize: "0.65rem", letterSpacing: "0.28em", color: "rgba(240,235,226,0.65)", fontFamily: "'Raleway', sans-serif", margin: "0 0 0.3rem" },
+  quoteStudio: { fontSize: "0.6rem", letterSpacing: "0.22em", color: "rgba(200,169,110,0.55)", fontFamily: "'Raleway', sans-serif", margin: "0 0 0.8rem" },
+  quoteSpecialties: { fontSize: "0.6rem", letterSpacing: "0.16em", color: "rgba(240,235,226,0.3)", fontFamily: "'Raleway', sans-serif", margin: "0.15rem 0" },
   aboutText: {},
   aboutCopy: { opacity: 0.7, lineHeight: 2, fontSize: "1.05rem", marginBottom: "1.4rem" },
   aboutBadges: { display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "2rem" },
@@ -788,6 +808,9 @@ const css = `
 
   /* Filter button hover */
   .filter-btn:hover { border-color: rgba(200,169,110,0.5) !important; color: #c8a96e !important; }
+
+  /* Collage hover */
+  .about-collage img:hover { transform: scale(1.04); }
 
   /* Footer link hover */
   .footer-link:hover { opacity: 0.85 !important; color: #c8a96e !important; }
