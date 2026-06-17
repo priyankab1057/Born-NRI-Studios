@@ -40,6 +40,8 @@ const PHOTOS = [
   { id: 35, category: "family",    src: cl("v1781601806/DSC06652_rg6voa.jpg"),  title: "Family" },
   { id: 36, category: "family",    src: cl("v1781601808/DSC06663_feccjh.jpg"),  title: "Family" },
   { id: 37, category: "events",    src: cl("v1781601811/DSC06719_kvvrxt.jpg"),  title: "House Warming" },
+  { id: 38, category: "nature",    src: cl("v1781678512/543B7450-D689-4A0C-9DD3-1EE104A86913_xbspiz.jpg"), title: "Nature" },
+  { id: 39, category: "nature",    src: cl("v1781678512/DSC04434_skgzen.jpg"), title: "Nature" },
 ];
 
 const PACKAGES = [
