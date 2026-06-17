@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 
-const OPT = "w_800,q_auto,f_auto,l_text:Arial_16_bold:%C2%A9%20Born%20NRI%20Studios,co_white,o_45,g_south_east,x_12,y_12";
+const OPT = "w_800,q_auto,f_auto,l_text:Arial_15_bold:Born%20NRI%20Studios,co_white,o_40,g_south_east,x_12,y_10";
 const cl = (path) => `https://res.cloudinary.com/dh6xo1aun/image/upload/${OPT}/${path}`;
 
 const PHOTOS = [
@@ -30,7 +30,6 @@ const PHOTOS = [
   { id: 24, category: "travel",    src: cl("v1781601802/971572c1-f731-4c10-b3af-40bbb8875d17_tccfhy.jpg"), title: "Travel" },
   { id: 25, category: "travel",    src: cl("v1781601802/6aa04b43-315f-4c66-9c97-bfe151d3b2de_ppqhu6.jpg"), title: "Travel" },
   { id: 26, category: "travel",    src: cl("v1781601802/5cfd6e63-8004-43cc-95e1-d121af5afee3_qyuqxw.jpg"), title: "Travel" },
-  { id: 27, category: "travel",    src: cl("v1781601749/IMG_0099_u1daq3.jpg"),  title: "Travel" },
   { id: 28, category: "newborn",   src: cl("v1777962657/DSC05962_ampui7.jpg"),  title: "New Born" },
   { id: 29, category: "newborn",   src: cl("v1777962658/DSC06119_n8wgyn.jpg"),  title: "New Born" },
   { id: 30, category: "travel",    src: cl("v1781601803/IMG_1311_vk7vlm.jpg"),  title: "Travel" },
@@ -302,7 +301,7 @@ export default function PhotographyPortfolio() {
               className="gallery-item gallery-item-appear"
               onClick={() => setLightbox(photo)}
             >
-              <img src={photo.src} alt={photo.title} style={styles.galleryImg} loading="lazy" />
+              <img src={photo.src} alt={photo.title} style={styles.galleryImg} loading="lazy" onError={e => { e.target.closest(".gallery-item").style.display = "none"; }} />
               <div style={styles.galleryOverlay} className="gallery-overlay">
                 <div style={styles.galleryMeta}>
                   <span style={styles.galleryTitle}>{photo.title}</span>
