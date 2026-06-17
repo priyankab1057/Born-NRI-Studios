@@ -549,7 +549,7 @@ const styles = {
   navLogo: { fontSize: "1.05rem", letterSpacing: "0.22em", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: "0.6rem", fontFamily: "'Raleway', sans-serif", zIndex: 101 },
   logoMark: { color: "#c8a96e", fontSize: "0.9rem" },
   navLinks: { display: "flex", gap: "2.2rem", alignItems: "center" },
-  navBtn: { background: "none", border: "none", color: "#f0ebe2", cursor: "pointer", fontSize: "0.6rem", letterSpacing: "0.2em", opacity: 0.7, fontFamily: "'Raleway', sans-serif", fontWeight: 500, padding: "0.4rem 0", position: "relative" },
+  navBtn: { background: "none", border: "none", color: "#f0ebe2", cursor: "pointer", fontSize: "0.6rem", letterSpacing: "0.2em", opacity: 1, fontFamily: "'Raleway', sans-serif", fontWeight: 600, padding: "0.4rem 0", position: "relative" },
   navCTA: { background: "transparent", border: "1px solid #c8a96e", color: "#c8a96e", padding: "0.55rem 1.5rem", fontSize: "0.58rem", letterSpacing: "0.22em", cursor: "pointer", fontFamily: "'Raleway', sans-serif", fontWeight: 600, transition: "all 0.25s", marginLeft: "0.5rem" },
   burger: { display: "none", background: "none", border: "none", cursor: "pointer", padding: "0.5rem", flexDirection: "column", gap: "5px", zIndex: 101 },
   burgerLine: { display: "block", width: "24px", height: "1.5px", background: "#f0ebe2", transition: "all 0.35s cubic-bezier(0.23,1,0.32,1)", transformOrigin: "center" },
@@ -663,7 +663,7 @@ const styles = {
   formRow: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginBottom: "1.5rem" },
   formGroup: { display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" },
   label: { fontSize: "0.55rem", letterSpacing: "0.22em", color: "#c8a96e", fontFamily: "'Raleway', sans-serif", fontWeight: 600 },
-  input: { background: "rgba(240,235,226,0.03)", border: "1px solid rgba(240,235,226,0.12)", borderBottom: "1px solid rgba(200,169,110,0.3)", color: "#f0ebe2", padding: "0.9rem 1rem", fontSize: "1rem", fontFamily: "'Cormorant Garamond', serif", outline: "none", width: "100%", boxSizing: "border-box", transition: "border-color 0.3s" },
+  input: { background: "rgba(240,235,226,0.05)", border: "1px solid rgba(240,235,226,0.12)", borderBottom: "1px solid rgba(200,169,110,0.3)", color: "#f0ebe2", padding: "0.9rem 1rem", fontSize: "1rem", fontFamily: "'Cormorant Garamond', serif", outline: "none", width: "100%", boxSizing: "border-box", transition: "border-color 0.3s", colorScheme: "dark" },
   submitBtn: { background: "#c8a96e", border: "1px solid #c8a96e", color: "#060402", padding: "1.15rem 2.5rem", fontSize: "0.62rem", letterSpacing: "0.25em", cursor: "pointer", fontWeight: 700, fontFamily: "'Raleway', sans-serif", width: "100%", marginTop: "0.5rem", transition: "all 0.3s" },
   formSubtitle: { opacity: 0.5, fontSize: "0.95rem", marginTop: "0.75rem", fontFamily: "'Raleway', sans-serif" },
   successBox: { maxWidth: "480px", margin: "0 auto", textAlign: "center", border: "1px solid rgba(200,169,110,0.3)", padding: "3.5rem" },
@@ -782,6 +782,8 @@ const css = `
     border-color: rgba(200,169,110,0.5) !important;
     background: rgba(200,169,110,0.03) !important;
   }
+  input[type="date"] { color-scheme: dark; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.7; cursor: pointer; }
   select option { background: #0c0a07; }
 
   /* Desktop only */
