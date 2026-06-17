@@ -445,12 +445,29 @@ export default function PhotographyPortfolio() {
             <p style={{ opacity: 0.5, fontSize: "0.75rem", letterSpacing: "0.15em", fontFamily: "'Raleway', sans-serif", marginBottom: "2rem" }}>
               CAN'T WAIT TO CREATE SOMETHING BEAUTIFUL WITH YOU ✦
             </p>
-            <button
-              style={styles.submitBtn}
-              onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", event: "", date: "", message: "" }); }}
-            >
-              SUBMIT ANOTHER REQUEST
-            </button>
+            <div style={{ marginTop: "2rem", display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
+              <button
+                style={styles.submitBtn}
+                onClick={() => { setSubmitted(false); setFormData({ name: "", email: "", email: "", event: "", date: "", message: "" }); }}
+              >
+                SUBMIT ANOTHER REQUEST
+              </button>
+            </div>
+            <div style={{ marginTop: "2.5rem", padding: "1.5rem", border: "1px solid rgba(200,169,110,0.15)", textAlign: "center" }}>
+              <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: "#c8a96e", fontFamily: "'Raleway', sans-serif", marginBottom: "0.6rem" }}>FOLLOW MY WORK</p>
+              <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
+                {[
+                  { label: "Instagram", href: "https://www.instagram.com/bornnristudios/" },
+                  { label: "YouTube", href: "https://www.youtube.com/@BornNRIStudios" },
+                  { label: "X / Twitter", href: "https://x.com/BornNRIStudios" },
+                ].map(s => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    style={{ color: "#f0ebe2", opacity: 0.5, textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.18em", fontFamily: "'Raleway', sans-serif" }}>
+                    {s.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         ) : (
           <form style={styles.form} onSubmit={handleBook} className="reveal">
@@ -485,6 +502,7 @@ export default function PhotographyPortfolio() {
               <div style={styles.formGroup}>
                 <label style={styles.label}>PREFERRED DATE</label>
                 <input style={styles.input} type="date" value={formData.date}
+                  min={new Date().toISOString().split("T")[0]}
                   onChange={e => setFormData({ ...formData, date: e.target.value })} />
               </div>
             </div>
