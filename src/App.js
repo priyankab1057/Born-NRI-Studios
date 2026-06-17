@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 
-const OPT = "w_800,q_auto,f_auto,l_text:Arial_15_bold:Born%20NRI%20Studios,co_white,o_40,g_south_east,x_12,y_10";
+const OPT = "w_800,q_auto,f_auto";
 const cl = (path) => `https://res.cloudinary.com/dh6xo1aun/image/upload/${OPT}/${path}`;
 
 const PHOTOS = [
