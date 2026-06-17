@@ -784,12 +784,13 @@ const css = `
   }
   input[type="date"] { color-scheme: dark; }
   input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1) brightness(2);
-    opacity: 1;
+    background-color: #c8a96e;
+    border-radius: 3px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     padding: 2px;
+    opacity: 1;
   }
   select option { background: #0c0a07; }
 
