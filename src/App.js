@@ -57,6 +57,7 @@ const PHOTOS = [
   { id: 52, category: "events",    src: cl("v1782369758/DSC04736_gwauje.jpg"),  title: "Birthday" },
   { id: 53, category: "events",    src: cl("v1782369761/DSC06705_nkafo7.jpg"),  title: "Traditional Event" },
   { id: 54, category: "events",    src: cl("v1782369948/DSC04708_ck7yfd.jpg"),  title: "Birthday" },
+  { id: 55, category: "events",    src: cl("v1782370011/DSC06866_tfyl10.jpg"),  title: "Lanterns Event" },
 ];
 
 const PACKAGES = [
