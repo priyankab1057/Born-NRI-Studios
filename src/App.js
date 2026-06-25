@@ -42,6 +42,12 @@ const PHOTOS = [
   { id: 37, category: "events",    src: cl("v1781601811/DSC06719_kvvrxt.jpg"),  title: "House Warming" },
   { id: 38, category: "nature",    src: cl("v1781678512/543B7450-D689-4A0C-9DD3-1EE104A86913_xbspiz.jpg"), title: "Nature" },
   { id: 39, category: "nature",    src: cl("v1781678512/DSC04434_skgzen.jpg"), title: "Nature" },
+  { id: 40, category: "events",    src: cl("v1782368378/DSC09474_ymsubi.jpg"),  title: "Corporate Event" },
+  { id: 41, category: "events",    src: cl("v1782367826/DSC09316_nsoeub.jpg"),  title: "Corporate Event" },
+  { id: 42, category: "events",    src: cl("v1782367826/DSC09466_ulc1yo.jpg"),  title: "Corporate Event" },
+  { id: 43, category: "events",    src: cl("v1782367641/DSC09249_buutf5.jpg"),  title: "Corporate Event" },
+  { id: 44, category: "events",    src: cl("v1782367641/DSC09525_xelfiq.jpg"),  title: "Corporate Event" },
+  { id: 45, category: "events",    src: cl("v1782367641/DSC08806_x889gt.jpg"),  title: "Corporate Event" },
 ];
 
 const PACKAGES = [
