@@ -52,6 +52,11 @@ const PHOTOS = [
   { id: 47, category: "events",    src: cl("v1782369155/DSC09835_rpkni1.jpg"),  title: "Corporate Event" },
   { id: 48, category: "events",    src: cl("v1782369155/DSC09824_o14spx.jpg"),  title: "Corporate Event" },
   { id: 49, category: "events",    src: cl("v1782369153/DSC09821_pjrvgc.jpg"),  title: "Corporate Event" },
+  { id: 50, category: "events",    src: cl("v1782369760/DSC04822_brexfx.jpg"),  title: "Event" },
+  { id: 51, category: "events",    src: cl("v1782369759/DSC04796_sojwjx.jpg"),  title: "Event" },
+  { id: 52, category: "events",    src: cl("v1782369758/DSC04736_gwauje.jpg"),  title: "Birthday" },
+  { id: 53, category: "events",    src: cl("v1782369761/DSC06705_nkafo7.jpg"),  title: "Traditional Event" },
+  { id: 54, category: "events",    src: cl("v1782369948/DSC04708_ck7yfd.jpg"),  title: "Birthday" },
 ];
 
 const PACKAGES = [
