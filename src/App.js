@@ -64,20 +64,20 @@ const PHOTOS = [
 const PACKAGES = [
   {
     name: "Essential",
-    price: "$300",
+    price: "Let's Chat",
     hours: "2 Hours",
     highlights: ["100+ edited photos", "1 location", "Print release"],
   },
   {
     name: "Signature",
-    price: "$500",
+    price: "Let's Chat",
     hours: "4 Hours",
     highlights: ["200+ edited photos", "2 locations", "Drone footage included", "Rush delivery"],
     featured: true,
   },
   {
     name: "Elite",
-    price: "$1,000",
+    price: "Let's Chat",
     hours: "Full Day",
     highlights: ["Unlimited photos", "Multiple locations", "4K drone video", "Same-week delivery"],
   },
@@ -398,7 +398,7 @@ export default function PhotographyPortfolio() {
           <h2 style={styles.sectionTitle}>Session Packages</h2>
           <div style={styles.titleUnderline} />
         </div>
-        <p style={styles.priceNote}>✦ &nbsp;Prices are flexible — let's talk and find a package that works for you.</p>
+        <p style={styles.priceNote}>✦ &nbsp;Packages starting from $300 — pricing varies based on your vision, location &amp; duration. Let's chat and create something perfect for you.</p>
         <div style={styles.packagesGrid}>
           {PACKAGES.map((pkg, i) => (
             <div
