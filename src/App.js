@@ -399,32 +399,10 @@ export default function PhotographyPortfolio() {
           <div style={styles.titleUnderline} />
         </div>
         <p style={styles.priceNote}>✦ &nbsp;Packages starting from $300 — pricing varies based on your vision, location &amp; duration. Let's chat and create something perfect for you.</p>
-        <div style={styles.packagesGrid}>
-          {PACKAGES.map((pkg, i) => (
-            <div
-              key={pkg.name}
-              style={{ ...styles.packageCard, ...(pkg.featured ? styles.packageFeatured : {}) }}
-              className="package-card reveal"
-            >
-              {pkg.featured && <div style={styles.featuredBadge}>MOST POPULAR</div>}
-              {pkg.featured && <div style={styles.featuredGlow} />}
-              <h3 style={styles.pkgName}>{pkg.name}</h3>
-              <div style={styles.pkgDivider} />
-              <div style={styles.pkgPrice}>{pkg.price}</div>
-              <div style={styles.pkgHours}>{pkg.hours}</div>
-              <ul style={styles.pkgList}>
-                {pkg.highlights.map(h => (
-                  <li key={h} style={styles.pkgItem}>
-                    <span style={styles.pkgCheck}>✦</span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-              <button style={pkg.featured ? styles.pkgBtnFeatured : styles.pkgBtn} className="pkg-btn" onClick={() => scrollTo("contact")}>
-                BOOK THIS PACKAGE
-              </button>
-            </div>
-          ))}
+        <div style={{ textAlign: "center", marginTop: "2rem" }}>
+          <button style={styles.pkgBtnFeatured} className="pkg-btn" onClick={() => scrollTo("contact")}>
+            GET IN TOUCH &nbsp;✦
+          </button>
         </div>
       </section>
 
